@@ -18,12 +18,13 @@
 
   <!-- Custom styles for this template -->
   <link href="styles/blog.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
 
   <header>
-    <div class="blog-masthead">
+    <div class="blog-masthead custom">
       <div class="container">
         <nav class="nav">
           <a class="nav-link active" href="#">Home</a>
@@ -35,7 +36,7 @@
       </div>
     </div>
 
-    <div class="blog-header">
+    <div class="blog-header custom">
       <div class="container">
         <h1 class="blog-title">The Bootstrap Blog</h1>
         <p class="lead blog-description">An example blog template built with Bootstrap.</p>
@@ -43,5 +44,5 @@
     </div>
   </header>
 
-  <main role="main" class="container">
+  <main role="main" class="container custom">
     <div class="row">

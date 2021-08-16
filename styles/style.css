@@ -1,0 +1,34 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.blog-masthead.custom {
+  background-color: #b34848;
+}
+
+.custom h1,
+.custom .h1,
+.custom h2,
+.custom .h2,
+.custom h3,
+.custom .h3,
+.custom h4,
+.custom .h4,
+.custom h5,
+.custom .h5,
+.custom h6,
+.custom .h6 {
+  color: #b34848;
+}
+
+.custom .blog-post-title:hover {
+  color: #b34848;
+  text-decoration: underline;
+  text-decoration-color: #b34848;
+}
