@@ -1,24 +1,11 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "blog";
+include "open-db-connection.php";
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  echo "Connection failed: " . mysqli_connect_error();
-}
-
-$sql = "SELECT id, Author, Title, Body, Created_at FROM posts ORDER BY Created_at DESC";
+$sql = "SELECT id, author, title, body, created_at FROM posts ORDER BY created_at DESC";
 $result = mysqli_query($conn, $sql);
 $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-mysqli_free_result($result);
-
-mysqli_close($conn);
+include "close-db-connection.php";
 ?>
 
 <?php include "header.php"; ?>
@@ -26,19 +13,19 @@ mysqli_close($conn);
 <div class="col-sm-8 blog-main">
   <?php foreach ($posts as $post) { ?>
     <div class="blog-post">
-      <a href="">
+      <a href="single-post.php?id=<?php echo $post["id"]; ?>">
         <h2 class="blog-post-title">
-          <?php echo htmlspecialchars($post["Title"]); ?>
+          <?php echo htmlspecialchars($post["title"]); ?>
         </h2>
       </a>
       <p class="blog-post-meta">
         <?php
-        $post_time = date_create($post["Created_at"]);
+        $post_time = date_create($post["created_at"]);
         echo date_format($post_time, "F j, Y, g:i a");
         ?>
-        by <a href="#"><?php echo htmlspecialchars($post["Author"]); ?></a></p>
+        by <a href="#"><?php echo htmlspecialchars($post["author"]); ?></a></p>
       <p>
-        <?php echo htmlspecialchars($post["Body"]); ?>
+        <?php echo htmlspecialchars($post["body"]); ?>
       </p>
     </div><!-- /.blog-post -->
   <?php } ?>
@@ -47,7 +34,6 @@ mysqli_close($conn);
     <a class="btn btn-outline-primary" href="#">Older</a>
     <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
   </nav>
-
 </div><!-- /.blog-main -->
 
 <?php include "sidebar.php"; ?>

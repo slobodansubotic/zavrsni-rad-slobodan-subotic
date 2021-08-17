@@ -32,3 +32,12 @@ html {
   text-decoration: underline;
   text-decoration-color: #b34848;
 }
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+}
+
+.comment-content {
+  color: rgba(0, 0, 0, 0.5);
+}
