@@ -41,3 +41,7 @@ html {
 .comment-content {
   color: rgba(0, 0, 0, 0.5);
 }
+
+#comments.hidden {
+  display: none;
+}

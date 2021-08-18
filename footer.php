@@ -9,6 +9,8 @@
     <a href="#">Back to top</a>
   </p>
 </footer>
+
+<script src="scripts/script.js"></script>
 </body>
 
 </html>

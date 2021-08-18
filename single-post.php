@@ -35,9 +35,10 @@ include "close-db-connection.php";
     </p>
   </div><!-- /.blog-post -->
 
-  <p><strong>Comments:</strong></p>
-  <hr>
-  <ul class="comments-list">
+  <button id="comments-button" class="btn btn-default">Hide comments</button>
+
+  <ul id="comments" class="comments-list">
+    <hr>
     <?php foreach ($comments as $comment) { ?>
       <li>
         <p><em><?php echo $comment["author"]; ?></em></p>
