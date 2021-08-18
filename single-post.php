@@ -41,8 +41,8 @@ include "close-db-connection.php";
     <hr>
     <?php foreach ($comments as $comment) { ?>
       <li>
-        <p><em><?php echo $comment["author"]; ?></em></p>
-        <p class="comment-content"><?php echo $comment["text"]; ?></p>
+        <p><em><?php echo htmlspecialchars($comment["author"]); ?></em></p>
+        <p class="comment-content"><?php echo htmlspecialchars($comment["text"]); ?></p>
         <hr>
       </li>
     <?php } ?>

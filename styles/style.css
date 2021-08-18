@@ -45,3 +45,7 @@ html {
 #comments.hidden {
   display: none;
 }
+
+.latest-title {
+  margin-bottom: 0.5rem;
+}
