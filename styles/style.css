@@ -33,13 +33,22 @@ html {
   text-decoration-color: #b34848;
 }
 
+.custom.blog-footer {
+  margin-top: auto;
+}
+
 .comments-list {
   list-style: none;
   padding: 0;
+  margin-bottom: 2rem;
 }
 
 .comment-content {
   color: rgba(0, 0, 0, 0.5);
+}
+
+#comments-button {
+  margin-bottom: 2rem;
 }
 
 #comments.hidden {
@@ -48,4 +57,10 @@ html {
 
 .latest-title {
   margin-bottom: 0.5rem;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

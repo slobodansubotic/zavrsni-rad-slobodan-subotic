@@ -1,4 +1,4 @@
-<?php ?>
+<?php include "get-posts.php" ?>
 
 <!doctype html>
 <html lang="en">
@@ -22,27 +22,27 @@
 </head>
 
 <body>
-
-  <header>
-    <div class="blog-masthead custom">
-      <div class="container">
-        <nav class="nav">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">New features</a>
-          <a class="nav-link" href="#">Press</a>
-          <a class="nav-link" href="#">New hires</a>
-          <a class="nav-link" href="#">About</a>
-        </nav>
+  <div class="body-container">
+    <header>
+      <div class="blog-masthead custom">
+        <div class="container">
+          <nav class="nav">
+            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">New features</a>
+            <a class="nav-link" href="#">Press</a>
+            <a class="nav-link" href="#">New hires</a>
+            <a class="nav-link" href="#">About</a>
+          </nav>
+        </div>
       </div>
-    </div>
 
-    <div class="blog-header custom">
-      <div class="container">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+      <div class="blog-header custom">
+        <div class="container">
+          <h1 class="blog-title">The Bootstrap Blog</h1>
+          <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main role="main" class="container custom">
-    <div class="row">
+    <main role="main" class="container custom">
+      <div class="row">

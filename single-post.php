@@ -1,21 +1,10 @@
 <?php
+include "header.php";
 $post_id = $_GET["id"];
 
-include "open-db-connection.php";
-
-$sql_post = "SELECT id, author, title, body, created_at FROM posts WHERE id = $post_id";
-$sql_comments = "SELECT id, author, text, post_id FROM comments WHERE post_id = $post_id";
-
-$result = mysqli_query($conn, $sql_post);
-$post = mysqli_fetch_assoc($result);
-
-$result = mysqli_query($conn, $sql_comments);
-$comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-include "close-db-connection.php";
+$query_post = "SELECT id, author, title, body, created_at FROM posts WHERE id = $post_id LIMIT 1";
+$post = $getPosts($query_post)[0];
 ?>
-
-<?php include "header.php"; ?>
 
 <div class="col-sm-8 blog-main">
   <div class="blog-post">
@@ -35,18 +24,7 @@ include "close-db-connection.php";
     </p>
   </div><!-- /.blog-post -->
 
-  <button id="comments-button" class="btn btn-default">Hide comments</button>
-
-  <ul id="comments" class="comments-list">
-    <hr>
-    <?php foreach ($comments as $comment) { ?>
-      <li>
-        <p><em><?php echo htmlspecialchars($comment["author"]); ?></em></p>
-        <p class="comment-content"><?php echo htmlspecialchars($comment["text"]); ?></p>
-        <hr>
-      </li>
-    <?php } ?>
-  </ul>
+  <?php include "comments.php" ?>
 </div><!-- /.blog-main -->
 
 <?php include "sidebar.php"; ?>

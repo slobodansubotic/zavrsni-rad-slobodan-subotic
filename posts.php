@@ -1,14 +1,9 @@
 <?php
-include "open-db-connection.php";
+include "header.php";
 
-$sql = "SELECT id, author, title, body, created_at FROM posts ORDER BY created_at DESC";
-$result = mysqli_query($conn, $sql);
-$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-include "close-db-connection.php";
+$query = "SELECT id, author, title, body, created_at FROM posts ORDER BY created_at DESC";
+$posts = $getPosts($query);
 ?>
-
-<?php include "header.php"; ?>
 
 <div class="col-sm-8 blog-main">
   <?php foreach ($posts as $post) { ?>
