@@ -1,22 +1,4 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $connection = mysqli_connect("localhost", "root", "", "blog");
-
-  if (!$connection) {
-    echo "Connection failed: " . mysqli_connect_error();
-  }
-
-  $comment_id = mysqli_real_escape_string($connection, $_POST["comment-id"]);
-
-  $query = "DELETE FROM comments WHERE id = '$comment_id'";
-
-  if (mysqli_query($connection, $query)) {
-    header("Location: single-post.php?id=$post_id");
-  } else {
-    echo "Query error: " . mysqli_error($connection);
-  }
-}
-
 $query = "SELECT id, author, text, post_id FROM comments WHERE post_id = $post_id";
 $comments = $getPosts($query);
 ?>
