@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $title = mysqli_real_escape_string($connection, $_POST["title"]);
   $author = mysqli_real_escape_string($connection, $_POST["author"]);
-  $content = mysqli_real_escape_string($connection, $_GET["content"]);
+  $content = mysqli_real_escape_string($connection, $_POST["content"]);
 
   $query = "INSERT INTO posts (title, body, author) VALUES ('$title', '$content', '$author')";
 
