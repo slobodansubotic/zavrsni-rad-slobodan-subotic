@@ -20,6 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Query error: " . mysqli_error($connection);
   }
 }
+
+$query = "SELECT id, first_name, last_name FROM users";
+$users = $getPosts($query);
 ?>
 
 <div class="col-8">
@@ -32,8 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <div class="form-group">
-        <input type="text" name="author" placeholder="Author's name" class="form-control" required>
-        <div class="invalid-feedback">Author's name is required.</div>
+        <select class="form-select" name="author">
+          <?php foreach ($users as $user) { ?>
+            <option value="<?php echo $user["id"]; ?>"><?php echo $user["first_name"] . " " . $user["last_name"]; ?></option>
+          <?php } ?>
+        </select>
       </div>
 
       <div class="form-group">

@@ -1,7 +1,10 @@
 <?php
 include "header.php";
 
-$query = "SELECT id, author, title, body, created_at FROM posts ORDER BY created_at DESC";
+$query = "SELECT posts.id, posts.author, posts.title, posts.body, posts.created_at, users.first_name, users.last_name
+          FROM posts
+          LEFT JOIN users ON posts.author = users.id
+          ORDER BY created_at DESC";
 $posts = $getPosts($query);
 ?>
 
@@ -18,7 +21,7 @@ $posts = $getPosts($query);
         $post_time = date_create($post["created_at"]);
         echo date_format($post_time, "F j, Y, g:i a");
         ?>
-        by <a href="#"><?php echo htmlspecialchars($post["author"]); ?></a></p>
+        by <a href=""><?php echo htmlspecialchars($post["first_name"] . " " . $post["last_name"]); ?></a></p>
       <p>
         <?php echo htmlspecialchars($post["body"]); ?>
       </p>
