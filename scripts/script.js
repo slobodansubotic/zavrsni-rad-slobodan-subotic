@@ -11,3 +11,13 @@ const toggleComments = () => {
 };
 
 commentsButton.onclick = toggleComments;
+
+const commmentFormValidation = () => {
+  const form = document.forms["add-comment"];
+  
+  form.classList.add("was-validated");
+
+  if (form.checkValidity() === false) {
+    return false;
+  }
+};
