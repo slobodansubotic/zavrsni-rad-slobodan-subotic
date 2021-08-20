@@ -69,3 +69,9 @@ html {
   display: flex;
   flex-direction: column;
 }
+
+.add-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}

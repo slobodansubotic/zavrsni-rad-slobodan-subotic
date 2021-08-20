@@ -24,7 +24,7 @@ $comments = $getPosts($query);
 <button id="comments-button" class="btn btn-default">Hide comments</button>
 
 <div id="comments">
-  <form action="create-comment.php?id=<?php echo $post["id"]; ?>" method="POST" name="add-comment" onsubmit="return commmentFormValidation()" novalidate>
+  <form action="create-comment.php?id=<?php echo $post["id"]; ?>" method="POST" name="add-comment" onsubmit="return formValidation('add-comment')" novalidate>
     <fieldset class="add-comment">
       <legend>Add new comment</legend>
       <div class="form-group">
